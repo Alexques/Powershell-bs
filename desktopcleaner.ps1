@@ -10,12 +10,10 @@ $daysOld             = 8 #Hvormange dager gammel
 #############################################
 
 $targetPaths         = @(###################################################################### alt som bruker onedrive må bli satt skjølv
-    "C:\Users\AleksanderVestveitOl\OneDrive - Informasjonsteknologi og Medieproduksjon\Skrivebord", #desktop er plassert anderledes siden vi bruker onedrive 
     "$env:USERPROFILE\Downloads",
     "$env:TEMP",
-    "C:\Users\AleksanderVestveitOl\Documents"
 )
-$logFile             = "C:\Users\AleksanderVestveitOl\OneDrive - Informasjonsteknologi og Medieproduksjon\Skrivebord\cleanup_log.txt"
+$logFile             = "$env:USERPROFILE\Downloads\cleanup_log.txt"
 
 $filesToDelete = Get-ChildItem -Path $targetPaths -File -ErrorAction SilentlyContinue |
     Where-Object {
